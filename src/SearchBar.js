@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Dropdown from "./Dropdown.js"
-import dogFoodsData from "./dogFoods.json"
+
 
 class SearchBar extends React.Component {
 
@@ -16,19 +16,39 @@ class SearchBar extends React.Component {
         super(props)
         this.state = {
             activeSuggestions: 0,
-            filteredSuggestions: dogFoodsData,
+            filteredSuggestions: [],
             showSuggestions: false,
             userInput: ''
         }
     }
 
+    // Get suggestions from props, gets input from input field
+    onChange = (e) => {
+        const { suggestions } = this.props
+        const userInput = e.currentTarget.value
+
+        // Create array of food names
+        const FoodArray = suggestions.map (
+            (suggestion) => suggestion.name
+        )
+
+        // Filter suggestions based on input
+        const filteredSuggestions = FoodArray.filter(
+            suggestion => suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+        )
+
+        this.setState({
+            activeSuggestion: 0,
+            filteredSuggestions,
+            showSuggestions: true,
+            userInput: e.currentTarget.value
+        })
+    }
+
     // React.Fragment behaves like a DIV, but doesn't show up in the final output
     render() {
-        // Display the list
         const {
-            onChange,
-            onClick,
-            onKeyDown,
+            onChange, onClick, onKeyDown,
             state: {
               activeSuggestion,
               filteredSuggestions,
@@ -36,6 +56,8 @@ class SearchBar extends React.Component {
               userInput
             }
         } = this
+
+        // Display the list of suggestions
         let suggestionsListComponent
         if(showSuggestions && userInput){
             if(filteredSuggestions.length) {
