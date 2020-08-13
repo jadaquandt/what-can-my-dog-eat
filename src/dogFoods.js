@@ -1,4 +1,4 @@
-export const dogFoods = [
+const dogFoods = [
     {
         name: "Chocolate",
         answer: "No!",
@@ -405,3 +405,5 @@ export const dogFoods = [
         preparation: "In very small amounts, raw or cooked plain spinach is ok for your dog."
     }
 ]
+
+export default dogFoods
