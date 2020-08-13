@@ -14,20 +14,22 @@ export class Accordion extends Component {
         this.setState({
             open: !this.state.open
         });
-    }    
+    }
+    
     render() {
         return (
-            <div >
+            <div id="answer">
+                <div>{dogFoods[0].name}? {dogFoods[0].answer}</div>
                 <button onClick={this.toggle}>Close/Open</button>
                 <div className={"collapse" + (this.state.open ? ' in' : '')}>
-                    This is the div!
-                    {dogFoods.map( (data) => {
+                <div>{dogFoods[0].reason}</div>
+                    {/* {dogFoods.map( (data, index) => {
                     return (
                     <div>
                         {data.name}
                     </div>
                     )
-                })}
+                })} */}
                 </div>
             </div>
         )
