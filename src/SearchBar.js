@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Dropdown from "./Dropdown.js"
-
+import dogFoodsData from "./dogFoods.js"
 
 class SearchBar extends React.Component {
 
@@ -24,16 +24,16 @@ class SearchBar extends React.Component {
 
     // Get suggestions from props, gets input from input field
     onChange = (e) => {
-        const { suggestions } = this.props
+        const foodOptions = dogFoodsData
         const userInput = e.currentTarget.value
 
         // Create array of food names
-        const FoodArray = suggestions.map (
+        const FoodNameArray = foodOptions.map (
             (suggestion) => suggestion.name
         )
 
         // Filter suggestions based on input
-        const filteredSuggestions = FoodArray.filter(
+        const filteredSuggestions = FoodNameArray.filter(
             suggestion => suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
         )
 
@@ -44,6 +44,16 @@ class SearchBar extends React.Component {
             userInput: e.currentTarget.value
         })
     }
+
+    // Display the corresponding card information after selecting food
+    onClick = e => {
+        this.setState({
+          activeSuggestion: 0,
+          filteredSuggestions: [],
+          showSuggestions: false,
+          userInput: e.currentTarget.innerText
+        });
+    };
 
     render() {
         const {
