@@ -4,11 +4,9 @@ import './App.css'
 function Dropdown(props) {
 
     return (
-        <div>
-            <li>
-                <a>{props.searchValue}</a>
-            </li>
-        </div>
+        <ul class="suggestions">
+            <li onClick={props.onClick}>{props.food}</li>
+        </ul>
     )
 }
 

@@ -45,7 +45,6 @@ class SearchBar extends React.Component {
         })
     }
 
-    // React.Fragment behaves like a DIV, but doesn't show up in the final output
     render() {
         const {
             onChange, onClick, onKeyDown,
@@ -61,17 +60,8 @@ class SearchBar extends React.Component {
         let suggestionsListComponent
         if(showSuggestions && userInput){
             if(filteredSuggestions.length) {
-                suggestionsListComponent = (
-                    <ul class="suggestions">
-                        {filteredSuggestions.map((suggestion, index) => {
-                            return (
-                                <li key={suggestion} onClick={onClick}>
-                                   {suggestion} 
-                                </li>
-                            )
-                        })}
-                    </ul>
-                )
+                suggestionsListComponent = filteredSuggestions.map(
+                    (suggestion, index) => <Dropdown key={suggestion} food={suggestion} onClick={onClick}></Dropdown>)
             }
             else {
                 suggestionsListComponent = (
@@ -83,6 +73,7 @@ class SearchBar extends React.Component {
         }
 
         return (
+            // React.Fragment behaves like a DIV, but doesn't show up in the final output
             <React.Fragment>
                 <input 
                     type="text"
