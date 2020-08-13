@@ -4,7 +4,7 @@ import './App.css'
 function Dropdown(props) {
 
     return (
-        <ul class="suggestions">
+        <ul class="foodOptions">
             <li onClick={props.onClick}>{props.food}</li>
         </ul>
     )

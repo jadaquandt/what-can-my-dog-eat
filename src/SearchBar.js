@@ -5,12 +5,6 @@ import dogFoodsData from "./dogFoods.js"
 
 class SearchBar extends React.Component {
 
-    static propTypes = {
-       // suggestions: PropTypes.instanceOf(Array)
-    }
-    static defaultProperty = {
-        suggestions: []
-    }
     // Initialize values
     constructor(props) {
         super(props)
@@ -18,13 +12,14 @@ class SearchBar extends React.Component {
             activeSuggestions: 0,
             filteredSuggestions: [],
             showSuggestions: false,
-            userInput: ''
+            userInput: '',
+            cardText: ''
         }
+        const foodOptions = dogFoodsData
     }
 
-    // Get suggestions from props, gets input from input field
+    // Filter food options based on user input
     onChange = (e) => {
-        const foodOptions = dogFoodsData
         const userInput = e.currentTarget.value
 
         // Create array of food names
@@ -91,7 +86,7 @@ class SearchBar extends React.Component {
                     onKeyDown={onKeyDown}
                     value={userInput}
                 />
-                {suggestionsListComponent}
+                { suggestionsListComponent }
             </React.Fragment>
         )
     }
