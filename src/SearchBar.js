@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Dropdown from "./Dropdown.js"
-import dogFoodsData from "./dogFoods.js"
+import Card from "./Card.js"
 
 class SearchBar extends React.Component {
 
@@ -15,11 +15,11 @@ class SearchBar extends React.Component {
             userInput: '',
             cardText: ''
         }
-        const foodOptions = dogFoodsData
     }
 
     // Filter food options based on user input
     onChange = (e) => {
+        const { foodOptions } = this.props;
         const userInput = e.currentTarget.value
 
         // Create array of food names
@@ -36,17 +36,27 @@ class SearchBar extends React.Component {
             activeSuggestion: 0,
             filteredSuggestions,
             showSuggestions: true,
-            userInput: e.currentTarget.value
+            userInput: e.currentTarget.value,
+            cardText: ''
         })
     }
 
     // Display the corresponding card information after selecting food
     onClick = e => {
+        // Create array of food names and gather the input
+        const { foodOptions } = this.props
+        const userInput = e.currentTarget.innerText.toLowerCase()
+
+        // Filter to selected food input
+        const text = foodOptions.filter(t => t.name.toLowerCase().includes(userInput))
+        
+        // Set the selected food text
         this.setState({
           activeSuggestion: 0,
           filteredSuggestions: [],
           showSuggestions: false,
-          userInput: e.currentTarget.innerText
+          userInput: e.currentTarget.innerText,
+          cardText: text[0].reason
         });
     };
 
@@ -57,13 +67,17 @@ class SearchBar extends React.Component {
               activeSuggestion,
               filteredSuggestions,
               showSuggestions,
-              userInput
+              userInput,
+              cardText
             }
         } = this
 
-        // Display the list of suggestions
+        // Display the list of suggestions or additional information from selected food item
         let suggestionsListComponent
+        let moreInformation
+        
         if(showSuggestions && userInput){
+            //console.log(filteredSuggestions)
             if(filteredSuggestions.length) {
                 suggestionsListComponent = filteredSuggestions.map(
                     (suggestion, index) => <Dropdown key={suggestion} food={suggestion} onClick={onClick}></Dropdown>)
@@ -76,6 +90,9 @@ class SearchBar extends React.Component {
                 )
             }
         }
+        else {
+            moreInformation = cardText
+        }
 
         return (
             // React.Fragment behaves like a DIV, but doesn't show up in the final output
@@ -87,6 +104,7 @@ class SearchBar extends React.Component {
                     value={userInput}
                 />
                 { suggestionsListComponent }
+                <Card info={moreInformation}></Card>
             </React.Fragment>
         )
     }
