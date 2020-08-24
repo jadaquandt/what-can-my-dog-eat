@@ -4,9 +4,9 @@ import './App.css'
 function Card(props) {
 
     return (
-        <div>
-            <p>{props.info}</p>
-        </div>
+        <React.Fragment>
+            <p className="card">{props.info}</p>
+        </React.Fragment>
     )
 }
 
