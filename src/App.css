@@ -91,7 +91,8 @@ footer p {
 }
 
 #information {
-  max-width: 75vw;
+  width: 75vw;
+  max-width: 70vw;
 }
 
 #infoTitle {
@@ -104,17 +105,17 @@ footer p {
 
 .infoHeaders {
     background-color: #0f2c46;
-    max-width: 75vw;
-    height: 75px;
+    height: 4em;
     border-radius: 5px;
-    padding: 1px 30px;
+    padding: 0 20px;
     margin-top:5px;
     display: flex;
     justify-content: space-between;
 }
 
 .infoHeaders h2{
-  margin-top: 5px;
+  top: 50%;
+  font-size: 1.3em;
 }
 
 .arrows {
@@ -123,7 +124,7 @@ footer p {
 
 .infoInside {
   background-color: #1d4061;
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 18px;
   font-weight: 600;
   padding: 1.5em 3em;
@@ -135,7 +136,7 @@ p .infoInside {
 #searchBarInput {
   width: 70vw;
   margin: 5vw;
-  height: 13vh;
+  height: 9vh;
   border: 0;
   background-color: #0e2b47;
   color:rgba(255,255,255);
