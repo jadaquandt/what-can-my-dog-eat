@@ -105,7 +105,7 @@ class SearchBar extends Component {
                     value={userInput}
                     placeholder="Search"
                 />
-                <ul class="foodOptions">
+                <ul className="foodOptions">
                     { suggestionsListComponent }
                 </ul>
                 <Card info={moreInformation}></Card>
