@@ -4,43 +4,67 @@ export class Accordion extends Component {
     constructor() {
         super();
 
-        this.state = { hide: false };
+        this.state = { showVeg: false,
+                    showSweet: false
+         };
     }
 
-    handleShow = () => {
-        this.setState({ hide: false})
+    handleShowVeg = () => {
+        this.setState({ showVeg: !this.state.showVeg})
     }
 
-    handleHide = () => {
-        this.setState({ hide: true})
+    handleShowSweet = () => {
+        this.setState({ showSweet: !this.state.showSweet})
     }
     
     render() {
         return (
         <div id="information">
-                <h1>General Info</h1>
-            <div id="veggies">
-                { this.state.hide === true
+                <h1 id="infoTitle">Additional Information</h1>
+            <div class="info">
+                <div onClick={this.handleShowVeg} class="infoHeaders">
+                <h2 >Limiting veggie consumption</h2>
+                {this.state.showVeg === true ? <img class="arrows" src="/images/down-arrow.png" alt=""/>
+                : <img class="arrows" src="/images/down-arrow-2.png" alt=""/>
+                }
+                </div>
+                { this.state.showVeg === true
                     ? 
-                    <div>
-                    <h2 onClick={this.handleShow}>Dogs and Veggies </h2>
-                    <p>Dogs are omnivores, which means they can eat both meat and plants. Many commercial dog foods are made with vegetables and fruits along with meat and grains. These products are also made to include all the nutrients a dog needs to be healthy.</p>
-                    <p>So even though your dog doesn’t need extra vegetables and fruits besides what's in her kibble, they won’t hurt her, either. Some produce can be part of good dog nutrition. Feed with caution though, always do your research before feeding your dog fruits and veggies</p>
+                    <div class="infoInside">
+                    Dogs are omnivores, which means they can eat both meat and plants. 
+                    Many commercial dog foods are made with vegetables and fruits along 
+                    with meat and grains. These products are also made to include all 
+                    the nutrients a dog needs to be healthy. 
+                    <br/> <br/>
+                    So even though your dog doesn’t need extra vegetables and fruits 
+                    besides what's in her kibble, they won’t hurt her, either. Some 
+                    produce can be part of good dog nutrition. Feed with caution though, 
+                    always do your research before feeding your dog fruits and veggies.
                     </div>
-                    : <h2 onClick={this.handleHide}>Dogs and Veggies </h2>
+                    : null
                 }
             </div>
             <div id="sweets">
-                    { this.state.hide === true
+                <div onClick={this.handleShowSweet} class="infoHeaders">
+                <h2 >Your dog and sweets</h2>
+                {this.state.showSweet === true ? <img class="arrows" src="/images/down-arrow.png" alt=""/>
+                : <img class="arrows" src="/images/down-arrow-2.png" alt=""/>
+                }
+                </div>
+                    { this.state.showSweet === true
                     ? 
-                    <div>
-                    <h2 onClick={this.handleShow}>Dogs and Sweets</h2>
-                    <div>
-                        <p>The big "no-no's" for dogs when giving them a sweet treat: Both chocolate and the artificial sweetener xylitol (found in many sugar-free candies) can be toxic to dogs. Never give these to your dog.</p>
-                        <p>Other than that, sugary foods that human's like to eat are generally not so good for your pup. Excess sugar can cause an upset stomach, cavities, weight gain, metabolic changes, and even diabetes in dogs. We know it's hard to say no to those puppy eyes when they're staring down your ice cream, but it's for their good!</p>
+                    <div class="infoInside">
+                        Both chocolate and the artificial sweetener xylitol (found in many 
+                        sugar-free candies) can be toxic to dogs. Never give these to your dog. 
+                        Other than that, sugary foods that humans like to eat are generally not 
+                        so good for your pup. 
+                        <br/> <br/>
+                        Excess sugar can cause an upset stomach, cavities, 
+                        weight gain, metabolic changes, and even diabetes in dogs. We know it's 
+                        hard to say no to those puppy eyes when they're staring down your ice cream, 
+                        but it's for her good!
                     </div>
-                    </div>
-                    : <h2 onClick={this.handleHide}>Dogs and Sweets </h2>
+                    : null
                 }
             </div>
             </div>

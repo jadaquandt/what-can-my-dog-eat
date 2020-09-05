@@ -5,7 +5,7 @@ function Dropdown(props) {
 
     return (
         <React.Fragment>
-            <li onClick={props.onClick}>{props.food}</li>
+            <li class="dropdownOptions" onClick={props.onClick}>{props.food}</li>
         </React.Fragment>
         
     )

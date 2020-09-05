@@ -98,10 +98,12 @@ class SearchBar extends Component {
             // React.Fragment behaves like a DIV, but doesn't show up in the final output
             <div>
                 <input 
+                    id="searchBarInput"
                     type="text"
                     onChange={onChange}
                     onKeyDown={onKeyDown}
                     value={userInput}
+                    placeholder="Search"
                 />
                 <ul class="foodOptions">
                     { suggestionsListComponent }
