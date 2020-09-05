@@ -5,8 +5,13 @@ export class Accordion extends Component {
         super();
 
         this.state = { showVeg: false,
-                    showSweet: false
+                    showSweet: false,
+                    showSalt: false
          };
+    }
+
+    handleShowSalt = () => {
+        this.setState({ showSalt: !this.state.showSalt})
     }
 
     handleShowVeg = () => {
@@ -21,12 +26,12 @@ export class Accordion extends Component {
         return (
         <div id="information">
                 <h1 id="infoTitle">Additional Information</h1>
-            <div class="info">
+            <div className="info">
                 <div onClick={this.handleShowVeg} class="infoHeaders">
-                <h2 >Limiting veggie consumption</h2>
-                {this.state.showVeg === true ? <img class="arrows" src="/images/down-arrow.png" alt=""/>
-                : <img class="arrows" src="/images/down-arrow-2.png" alt=""/>
-                }
+                    <h2 >Limiting veggie consumption</h2>
+                    {this.state.showVeg === true ? <img class="arrows" src="/images/down-arrow.png" alt=""/>
+                    : <img class="arrows" src="/images/down-arrow-2.png" alt=""/>
+                    }
                 </div>
                 { this.state.showVeg === true
                     ? 
@@ -44,16 +49,37 @@ export class Accordion extends Component {
                     : null
                 }
             </div>
-            <div id="sweets">
-                <div onClick={this.handleShowSweet} class="infoHeaders">
-                <h2 >Your dog and sweets</h2>
-                {this.state.showSweet === true ? <img class="arrows" src="/images/down-arrow.png" alt=""/>
-                : <img class="arrows" src="/images/down-arrow-2.png" alt=""/>
+            <div className="info">
+                <div onClick={this.handleShowSalt} className="infoHeaders">
+                    <h2 >Limiting salt consumption</h2>
+                    {this.state.showSalt=== true ? <img className="arrows" src="/images/down-arrow.png" alt=""/>
+                    : <img className="arrows" src="/images/down-arrow-2.png" alt=""/>
+                    }
+                    </div>
+                { this.state.showSalt === true
+                    ? 
+                    <div className="infoInside">
+                    While the occasional salty snack probably won't hurt your dog, 
+                    always be aware of your pup's salt intake. When too much salt builds up 
+                    in a dog’s body, her cells release their water content to try and balance 
+                    out the sodium disparity. <br/> <br/> This, in turn, causes a litany of serious 
+                    health effects. It can cause seizures, a loss of brain cells, injury to 
+                    the kidneys, and severe dehydration. If a dog with salt poisoning 
+                    isn’t treated medically, the condition can easily lead to death.
+                    </div>
+                    : null
                 }
+            </div>
+            <div id="info">
+                <div onClick={this.handleShowSweet} className="infoHeaders">
+                    <h2 >Limiting sweet consumption</h2>
+                    {this.state.showSweet === true ? <img className="arrows" src="/images/down-arrow.png" alt=""/>
+                    : <img className="arrows" src="/images/down-arrow-2.png" alt=""/>
+                    }
                 </div>
                     { this.state.showSweet === true
                     ? 
-                    <div class="infoInside">
+                    <div className="infoInside">
                         Both chocolate and the artificial sweetener xylitol (found in many 
                         sugar-free candies) can be toxic to dogs. Never give these to your dog. 
                         Other than that, sugary foods that humans like to eat are generally not 
