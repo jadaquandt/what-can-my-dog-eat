@@ -29,14 +29,8 @@ section {
 .section-1 {
   border-top: 6px solid #0E2B47;
   color: white;
-  padding-top: 100px;
-  /* display: none; */
-  min-height: 300px;
+  grid-row: 2 / 3;
 }
-.hide-section {
-  display: none;
-}
-
 .collapse {
   display: none
 }
