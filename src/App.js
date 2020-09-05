@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar.js';
 import './App.css';
-import dogFoodsData from "./dogFoods.js"
+import dogFoodsData from "./dogFoods.js";
 import Accordion from './Accordion.jsx';
 
 export class App extends Component {

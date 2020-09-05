@@ -3,7 +3,7 @@ import './App.css'
 import Dropdown from "./Dropdown.js"
 import Card from "./Card.js"
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
 
     // Initialize values
     constructor(props) {
@@ -98,10 +98,12 @@ class SearchBar extends React.Component {
             // React.Fragment behaves like a DIV, but doesn't show up in the final output
             <div>
                 <input 
+                    id="searchBarInput"
                     type="text"
                     onChange={onChange}
                     onKeyDown={onKeyDown}
                     value={userInput}
+                    placeholder="Search"
                 />
                 <ul className="foodOptions">
                     { suggestionsListComponent }

@@ -1,34 +1,72 @@
 import React, { Component } from 'react';
-import './Accordion.css';
-import  dogFoods  from './dogFoods';
 
 export class Accordion extends Component {
     constructor() {
         super();
 
-        this.state = { 
-            open: true 
-        };
+        this.state = { showVeg: false,
+                    showSweet: false
+         };
     }
-    toggle = () => {
-        this.setState({
-            open: !this.state.open
-        });
-    }    
+
+    handleShowVeg = () => {
+        this.setState({ showVeg: !this.state.showVeg})
+    }
+
+    handleShowSweet = () => {
+        this.setState({ showSweet: !this.state.showSweet})
+    }
+    
     render() {
         return (
-            <div >
-                <button onClick={this.toggle}>Close/Open</button>
-                <div className={"collapse" + (this.state.open ? ' in' : '')}>
-                    This is the div!
-                    {dogFoods.map( (data) => {
-                    return (
-                    <div>
-                        {data.name}
-                    </div>
-                    )
-                })}
+        <div id="information">
+                <h1 id="infoTitle">Additional Information</h1>
+            <div class="info">
+                <div onClick={this.handleShowVeg} class="infoHeaders">
+                <h2 >Limiting veggie consumption</h2>
+                {this.state.showVeg === true ? <img class="arrows" src="/images/down-arrow.png" alt=""/>
+                : <img class="arrows" src="/images/down-arrow-2.png" alt=""/>
+                }
                 </div>
+                { this.state.showVeg === true
+                    ? 
+                    <div class="infoInside">
+                    Dogs are omnivores, which means they can eat both meat and plants. 
+                    Many commercial dog foods are made with vegetables and fruits along 
+                    with meat and grains. These products are also made to include all 
+                    the nutrients a dog needs to be healthy. 
+                    <br/> <br/>
+                    So even though your dog doesn’t need extra vegetables and fruits 
+                    besides what's in her kibble, they won’t hurt her, either. Some 
+                    produce can be part of good dog nutrition. Feed with caution though, 
+                    always do your research before feeding your dog fruits and veggies.
+                    </div>
+                    : null
+                }
+            </div>
+            <div id="sweets">
+                <div onClick={this.handleShowSweet} class="infoHeaders">
+                <h2 >Your dog and sweets</h2>
+                {this.state.showSweet === true ? <img class="arrows" src="/images/down-arrow.png" alt=""/>
+                : <img class="arrows" src="/images/down-arrow-2.png" alt=""/>
+                }
+                </div>
+                    { this.state.showSweet === true
+                    ? 
+                    <div class="infoInside">
+                        Both chocolate and the artificial sweetener xylitol (found in many 
+                        sugar-free candies) can be toxic to dogs. Never give these to your dog. 
+                        Other than that, sugary foods that humans like to eat are generally not 
+                        so good for your pup. 
+                        <br/> <br/>
+                        Excess sugar can cause an upset stomach, cavities, 
+                        weight gain, metabolic changes, and even diabetes in dogs. We know it's 
+                        hard to say no to those puppy eyes when they're staring down your ice cream, 
+                        but it's for her good!
+                    </div>
+                    : null
+                }
+            </div>
             </div>
         )
     }
