@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Accordion.css';
-import { dogFoods } from './dogFoods';
+import  dogFoods  from './dogFoods';
 
 export class Accordion extends Component {
     constructor() {

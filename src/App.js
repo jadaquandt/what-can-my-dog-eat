@@ -5,7 +5,7 @@ import dogFoodsData from "./dogFoods.js"
 import Accordion from './Accordion.jsx';
 
 export class App extends Component {
-    render() {
+    render() {        
         return (
             <div className="container">
                 <section className="main">
@@ -15,8 +15,8 @@ export class App extends Component {
                 <section className="section-1">
                     <Accordion />
                 </section>
-                <footer>
-                    <i class="fas fa-exclamation-triangle"></i>
+                <footer id="disclaimerFooters">
+                    <i className="fas fa-exclamation-triangle"></i>
                     <p>
                         Please note, the sole purpose of this website’s content is to inform, 
                         not to provide any kind of medical advice. Always consult with your vet 

@@ -103,7 +103,7 @@ class SearchBar extends React.Component {
                     onKeyDown={onKeyDown}
                     value={userInput}
                 />
-                <ul class="foodOptions">
+                <ul className="foodOptions">
                     { suggestionsListComponent }
                 </ul>
                 <Card info={moreInformation}></Card>
