@@ -112,13 +112,13 @@ footer p {
     margin-top:5px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.infoHeaders h2{
+.infoHeaders h2 {
   top: 50%;
   margin: 0;
-  height: 1em;
-  align-items: center;
+  line-height: 1em;
   font-size: 1.3em;
 }
 
