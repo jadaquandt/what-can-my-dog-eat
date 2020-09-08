@@ -96,7 +96,7 @@ class SearchBar extends Component {
 
         return (
             // React.Fragment behaves like a DIV, but doesn't show up in the final output
-            <div>
+            <React.Fragment>
                 <input 
                     id="searchBarInput"
                     type="text"
@@ -109,7 +109,7 @@ class SearchBar extends Component {
                     { suggestionsListComponent }
                 </ul>
                 <Card info={moreInformation}></Card>
-            </div>
+            </React.Fragment>
         )
     }
 }
