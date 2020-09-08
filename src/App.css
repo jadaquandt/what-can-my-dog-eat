@@ -92,8 +92,8 @@ footer p {
 }
 
 #information {
-  width: 75vw;
-  max-width: 70vw;
+  width: 100%;
+  max-width: 1000px;
 }
 
 #infoTitle {
@@ -116,6 +116,9 @@ footer p {
 
 .infoHeaders h2{
   top: 50%;
+  margin: 0;
+  height: 1em;
+  align-items: center;
   font-size: 1.3em;
 }
 
@@ -135,9 +138,10 @@ p .infoInside {
   margin: 0;
 }
 #searchBarInput {
-  width: 70vw;
+  width: 45vw;
+  max-width: 1000px;
   margin: 5vw;
-  height: 9vh;
+  height: 10vh;
   border: 0;
   background-color: #0e2b47;
   color:rgba(255,255,255);
