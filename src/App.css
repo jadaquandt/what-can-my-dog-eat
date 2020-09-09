@@ -60,6 +60,51 @@ li.dropdownOptions {
   list-style-type: none;
   color:white;
 }
+.cardWrapper {
+  max-width: 723px;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.card {
+  margin: 0;
+  padding: 50px 47px;
+  padding-left: 96px;
+  position: relative;
+}
+.card:before {
+  content: '';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 56px;
+  position: absolute;
+  left: 29px;
+}
+.allowed {
+  background-color: #4AD295;
+  color: #0E2B47;
+}
+.allowed .card:before {
+  content: '\f058';
+  color: #309467;
+}
+.harmful {
+  background-color: #DA2C38;
+  color: #0E2B47;
+}
+.harmful .card:before {
+  content: '\f057';
+  color: #9D1D26;
+}
+.limited {
+  background-color: #FFB229;
+  color: #0E2B47;
+}
+.limited .card:before {
+  content: '\f06a';
+  color: #AC7A21;
+}
 /* ACCORDION SECTION */
 .accordionWrapper {
   background-color: #08192B;
