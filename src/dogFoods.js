@@ -9,7 +9,7 @@ const dogFoods = [
         name: "Almonds",
         answer: "No!",
         status: "harmful",
-        reason: "Almonds may not necessarily be toxic to dogs but they can block the esophagus or even tear the windpipe if not chewed completely"
+        reason: "Almonds can cause gastric intestinal distress to your dog. They can also block the esophagus or even tear the windpipe if not chewed completely."
     },
     {
         name: "Cinnamon",
@@ -403,6 +403,13 @@ const dogFoods = [
         status: "limited",
         reason: "Spinach contains large amounts of vitamins A, B, C, and K. It also contains iron, antioxidants, beta-carotene, and roughage, which stimulate the digestive tract. Presumably, you feed your dog a healthy, nutritious dog food that contains everything he needs, but small amounts of spinach can provide benefits. However, spinach is very high in oxalic acid, which blocks the body’s ability to absorb calcium and can lead to kidney damage. Your dog would have to eat a very large quantity of spinach to cause damage though.",
         preparation: "In very small amounts, raw or cooked plain spinach is ok for your dog."
+    },
+    {
+        name: "Ice Cream",
+        answer: "Yes, but...",
+        status: "limited",
+        reason: "While not a major danger if ice cream is given in small amounts as a treat, for dogs with obesity, diabetes, allergies or dairy intolerance, ice cream could be a big problem. Although some dog owners do feed their dogs ice cream, we cannot say that it is a good dessert for dogs, especially when there are other options that are not likely to cause digestive problems.",
+        preparation: "Rather than feeding your dog ice cream, look up a recipe for dog friendly ice cream or pick up a ready-made one from your local pet store."
     }
 ]
 
