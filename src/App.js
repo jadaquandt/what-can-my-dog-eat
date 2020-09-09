@@ -9,11 +9,11 @@ export class App extends Component {
     render() {        
         return (
             <div className="container">
-                <section className="main">
+                <section className="searchWrapper">
                     <h1 className="title">What can my dog eat?</h1>
                     <SearchBar foodOptions={dogFoodsData}/>
                 </section>
-                <section className="section-1">
+                <section className="accordionWrapper">
                     <Accordion />
                 </section>
                     <Disclaimer />
