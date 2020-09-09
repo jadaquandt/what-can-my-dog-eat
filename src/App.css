@@ -45,6 +45,17 @@ section {
   font-weight: bold;
   border-radius: 5px;
 }
+::-webkit-input-placeholder { /* Edge */
+  color: #fff;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+::placeholder {
+  color: #fff;
+}
 li.dropdownOptions {
   list-style-type: none;
   color:white;
@@ -134,7 +145,7 @@ footer p {
   body {
     font-size: 18px;
   }
-  .main {
+  .searchWrapper {
     background: url('/images/background.png');
     background-position: top center;
     background-size: cover;
