@@ -4,9 +4,10 @@ import './App.css'
 function Dropdown(props) {
 
     return (
-        <ul class="foodOptions">
-            <li onClick={props.onClick}>{props.food}</li>
-        </ul>
+        <React.Fragment>
+            <li class="dropdownOptions" onClick={props.onClick}>{props.food}</li>
+        </React.Fragment>
+        
     )
 }
 

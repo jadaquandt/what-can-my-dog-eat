@@ -1,38 +1,213 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* GLOBAL RESET STYLING */
+body,html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans',sans-serif;
+  font-size: 16px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* CONTENT WRAPPER AND SECTION GLOBAL STYLING */
+.container {
+  background-color: #08192B;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 2fr 1fr;
+  height: 100vh;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section {
+  padding: 0 23px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+/* SEARCH SECTION */
+.searchWrapper {
+  background: url('/images/m-background.png') no-repeat;
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  grid-row: 1 / 2;
+}
+#searchBarInput {
+  width: 45vw;
+  max-width: 1000px;
+  margin: 5vw;
+  height: 10vh;
+  border: 0;
+  background-color: #0e2b47;
+  color:rgba(255,255,255);
+  font-family: 'Nunito Sans',sans-serif;
+  font-size: 2em;
+  padding: 2px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+::-webkit-input-placeholder { /* Edge */
+  color: #fff;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+::placeholder {
+  color: #fff;
+}
+li.dropdownOptions {
+  list-style-type: none;
+  color:white;
+}
+.cardWrapper {
+  max-width: 723px;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.card {
+  margin: 0;
+  padding: 50px 47px;
+  padding-left: 96px;
+  position: relative;
+}
+.card:before {
+  content: '';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 56px;
+  position: absolute;
+  left: 29px;
+}
+.allowed {
+  background-color: #4AD295;
+  color: #0E2B47;
+}
+.allowed .card:before {
+  content: '\f058';
+  color: #309467;
+}
+.harmful {
+  background-color: #DA2C38;
+  color: #0E2B47;
+}
+.harmful .card:before {
+  content: '\f057';
+  color: #9D1D26;
+}
+.limited {
+  background-color: #FFB229;
+  color: #0E2B47;
+}
+.limited .card:before {
+  content: '\f06a';
+  color: #AC7A21;
+}
+/* ACCORDION SECTION */
+.accordionWrapper {
+  background-color: #08192B;
+  border-top: 6px solid #0E2B47;
   color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  grid-row: 2 / 3;
+}
+.collapse {
+  display: none
+}
+.title {
+  font-size: 3.4em;
+  line-height: 1em;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+#information {
+  width: 100%;
+  max-width: 1000px;
+}
+#infoTitle {
+  font-size: 3em;
+  line-height: 1em;
+  text-align: center;
+  margin: 0 0 30px 0;
+  color: #fff;
+}
+.infoHeaders {
+  background-color: #0f2c46;
+  height: 4em;
+  border-radius: 5px;
+  padding: 0 20px;
+  margin-top:5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.infoHeaders h2 {
+  top: 50%;
+  margin: 0;
+  line-height: 1em;
+  font-size: 1.3em;
+}
+.arrows {
+  object-fit: contain;
+}
+.infoInside {
+  background-color: #1d4061;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 1.5em 3em;
+  margin: 0;
+}
+p .infoInside {
+  margin: 0;
+}
+/* FOOTER SECTION */
+footer {
+  background-color: #0E2B47;
+  align-self: end;
+  text-align: center;
+  width: 100%;
+  grid-row: 3 / -1;
+}
+footer .fa-exclamation-triangle {
+  color: #FFB229;
+  display: block;
+  font-size: 80px;
+  margin-top: 26px;
+}
+footer p {
+  color: #fff;
+  padding: 20px 15px;
+  padding-top: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* DESKTOP MEDIA QUERY */
+@media (min-width: 992px) {
+  body {
+    font-size: 18px;
   }
-  to {
-    transform: rotate(360deg);
+  .searchWrapper {
+    background: url('/images/background.png');
+    background-position: top center;
+    background-size: cover;
+  }
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  footer p {
+    text-align: left;
+    padding-top: 20px;
+    width: 80ch;
+  }
+  footer .fa-exclamation-triangle {
+    font-size: 60px;
+    margin: 0;
   }
 }

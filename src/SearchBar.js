@@ -3,7 +3,7 @@ import './App.css'
 import Dropdown from "./Dropdown.js"
 import Card from "./Card.js"
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
 
     // Initialize values
     constructor(props) {
@@ -109,6 +109,7 @@ class SearchBar extends React.Component {
                     onChange={onChange}
                     onKeyDown={onKeyDown}
                     value={userInput}
+                    placeholder="Search"
                 />
                 <ul className="foodOptions">
                     { suggestionsListComponent }
