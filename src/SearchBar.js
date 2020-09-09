@@ -13,7 +13,8 @@ class SearchBar extends Component {
             filteredSuggestions: [],
             showSuggestions: false,
             userInput: '',
-            cardText: ''
+            cardText: '',
+            foodStatus: ''
         }
     }
 
@@ -37,7 +38,8 @@ class SearchBar extends Component {
             filteredSuggestions,
             showSuggestions: true,
             userInput: e.currentTarget.value,
-            cardText: ''
+            cardText: '',
+            foodStatus: ''
         })
     }
 
@@ -56,7 +58,8 @@ class SearchBar extends Component {
           filteredSuggestions: [],
           showSuggestions: false,
           userInput: e.currentTarget.innerText,
-          cardText: text[0].reason
+          cardText: text[0].reason,
+          foodStatus: text[0].status
         });
     };
 
@@ -68,13 +71,15 @@ class SearchBar extends Component {
               filteredSuggestions,
               showSuggestions,
               userInput,
-              cardText
+              cardText,
+              foodStatus
             }
         } = this
 
         // Display the list of suggestions or additional information from selected food item
         let suggestionsListComponent
         let moreInformation
+        let cardStatus
         
         if(showSuggestions && userInput){
             //console.log(filteredSuggestions)
@@ -92,6 +97,7 @@ class SearchBar extends Component {
         }
         else {
             moreInformation = cardText
+            cardStatus = foodStatus
         }
 
         return (
@@ -99,7 +105,7 @@ class SearchBar extends Component {
             <React.Fragment>
                 <input 
                     id="searchBarInput"
-                    type="text"
+                    type="search"
                     onChange={onChange}
                     onKeyDown={onKeyDown}
                     value={userInput}
@@ -108,7 +114,7 @@ class SearchBar extends Component {
                 <ul className="foodOptions">
                     { suggestionsListComponent }
                 </ul>
-                <Card info={moreInformation}></Card>
+                <Card status={cardStatus} info={moreInformation}></Card>
             </React.Fragment>
         )
     }
