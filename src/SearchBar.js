@@ -13,7 +13,8 @@ class SearchBar extends React.Component {
             filteredSuggestions: [],
             showSuggestions: false,
             userInput: '',
-            cardText: ''
+            cardText: '',
+            foodStatus: ''
         }
     }
 
@@ -37,7 +38,8 @@ class SearchBar extends React.Component {
             filteredSuggestions,
             showSuggestions: true,
             userInput: e.currentTarget.value,
-            cardText: ''
+            cardText: '',
+            foodStatus: ''
         })
     }
 
@@ -56,7 +58,8 @@ class SearchBar extends React.Component {
           filteredSuggestions: [],
           showSuggestions: false,
           userInput: e.currentTarget.innerText,
-          cardText: text[0].reason
+          cardText: text[0].reason,
+          foodStatus: text[0].status
         });
     };
 
@@ -68,13 +71,15 @@ class SearchBar extends React.Component {
               filteredSuggestions,
               showSuggestions,
               userInput,
-              cardText
+              cardText,
+              foodStatus
             }
         } = this
 
         // Display the list of suggestions or additional information from selected food item
         let suggestionsListComponent
         let moreInformation
+        let cardStatus
         
         if(showSuggestions && userInput){
             //console.log(filteredSuggestions)
@@ -92,19 +97,23 @@ class SearchBar extends React.Component {
         }
         else {
             moreInformation = cardText
+            cardStatus = foodStatus
         }
 
         return (
             // React.Fragment behaves like a DIV, but doesn't show up in the final output
             <React.Fragment>
                 <input 
-                    type="text"
+                    id="searchBarInput"
+                    type="search"
                     onChange={onChange}
                     onKeyDown={onKeyDown}
                     value={userInput}
                 />
-                { suggestionsListComponent }
-                <Card info={moreInformation}></Card>
+                <ul className="foodOptions">
+                    { suggestionsListComponent }
+                </ul>
+                <Card status={cardStatus} info={moreInformation}></Card>
             </React.Fragment>
         )
     }

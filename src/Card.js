@@ -4,8 +4,8 @@ import './App.css'
 function Card(props) {
 
     return (
-        <div>
-            <p>{props.info}</p>
+        <div className={`cardWrapper ${props.status}`}>
+            <p className="card">{props.info}</p>
         </div>
     )
 }
