@@ -37,9 +37,7 @@ class SearchBar extends Component {
             activeSuggestion: 0,
             filteredSuggestions,
             showSuggestions: true,
-            userInput: e.currentTarget.value,
-            cardText: '',
-            foodStatus: ''
+            userInput: e.currentTarget.value
         })
     }
 
@@ -55,7 +53,6 @@ class SearchBar extends Component {
         // Set the selected food text
         this.setState({
           activeSuggestion: 0,
-          filteredSuggestions: [],
           showSuggestions: false,
           userInput: e.currentTarget.innerText,
           cardText: text[0].reason,
