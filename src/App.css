@@ -91,17 +91,35 @@ li.dropdownOptions {
 }
 .card {
   margin: 0;
-  padding: 50px 47px;
-  padding-left: 96px;
+  padding: 145px 10px 40px 10px;
+  text-align: center;
   position: relative;
 }
 .card:before {
   content: '';
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 56px;
+  font-size: 86px;
   position: absolute;
-  left: 29px;
+  top: 35px;
+  left: calc(50% - 47px)
+}
+@media (min-width: 450px) {
+  .card {
+    padding: 145px 40px 60px 40px;
+  }
+}
+@media (min-width: 992px) {
+  .card {
+    padding: 50px 95px;
+    padding-left: 165px;
+    text-align: left;
+  }
+  .card:before {
+    left: 60px;
+    top: calc(50% - 40px);
+    font-size: 76px
+  }
 }
 .allowed {
   background-color: #4AD295;
@@ -191,8 +209,8 @@ footer {
   background-color: #0E2B47;
   align-self: end;
   text-align: center;
-  width: 100%;
   grid-row: 3 / -1;
+  padding: 0 23px;
 }
 footer .fa-exclamation-triangle {
   color: #FFB229;
@@ -204,9 +222,6 @@ footer p {
   color: #fff;
   padding: 20px 15px;
   padding-top: 0;
-}
-/* TABLET MEDIA QUERY */
-@media (min-width: 824px) {
 }
 /* DESKTOP MEDIA QUERY */
 @media (min-width: 992px) {
