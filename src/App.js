@@ -10,13 +10,17 @@ export class App extends Component {
         return (
             <div className="container">
                 <section className="searchWrapper">
-                    <h1 className="title">What can my dog eat?</h1>
-                    <SearchBar foodOptions={dogFoodsData}/>
+                    <div className="row">
+                        <h1 className="title">What can my dog eat?</h1>
+                        <SearchBar foodOptions={dogFoodsData}/>
+                    </div>
                 </section>
                 <section className="accordionWrapper">
-                    <Accordion />
+                    <div className="row">
+                        <Accordion />
+                    </div>
                 </section>
-                    <Disclaimer />
+                <Disclaimer />
             </div>
         )
     }
