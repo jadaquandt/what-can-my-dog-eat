@@ -16,12 +16,14 @@ body,html {
   grid-template-rows: 3fr 2fr 1fr;
   height: 100vh;
 }
-section {
+.row {
   padding: 0 23px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 /* SEARCH SECTION */
 .searchWrapper {
@@ -32,9 +34,8 @@ section {
   grid-row: 1 / 2;
 }
 #searchBarInput {
-  width: 45vw;
-  max-width: 1000px;
-  margin: 5vw;
+  width: 100%;
+  margin-top: 60px;
   height: 10vh;
   border: 0;
   background-color: #0e2b47;
@@ -43,7 +44,10 @@ section {
   font-size: 2em;
   padding: 2px 20px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
+}
+#searchBarInput:focus {
+  outline: none;
 }
 ::-webkit-input-placeholder { /* Edge */
   color: #fff;
@@ -52,7 +56,25 @@ section {
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: #fff;
 }
-
+.foodOptions {
+  position: relative;
+  top: -1px;
+  margin: 0;
+  padding: 0;
+  background-color: #0e2b47;
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+  max-height: 300px;
+  overflow: scroll;
+}
+.foodOptions li {
+  padding: 10px 20px;
+  font-size: 2em;
+  font-weight: bold;
+}
+.foodOptions li:focus, .foodOptions li:hover {
+  background-color: #4AD295;
+}
 ::placeholder {
   color: #fff;
 }
@@ -61,11 +83,11 @@ li.dropdownOptions {
   color:white;
 }
 .cardWrapper {
-  max-width: 723px;
   width: 100%;
   border-radius: 5px;
   font-weight: bold;
   font-size: 1.3em;
+  margin-top: 60px;
 }
 .card {
   margin: 0;
@@ -126,7 +148,6 @@ li.dropdownOptions {
 }
 #information {
   width: 100%;
-  max-width: 1000px;
 }
 #infoTitle {
   font-size: 3em;
@@ -184,7 +205,9 @@ footer p {
   padding: 20px 15px;
   padding-top: 0;
 }
-
+/* TABLET MEDIA QUERY */
+@media (min-width: 824px) {
+}
 /* DESKTOP MEDIA QUERY */
 @media (min-width: 992px) {
   body {
