@@ -101,6 +101,12 @@ li.dropdownOptions {
   list-style-type: none;
   color:white;
 }
+.no-suggestions {
+  padding: 10px 20px;
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
 /* #endregion */
 
 /* #region CARD */
