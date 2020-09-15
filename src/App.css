@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900&display=swap");
 
-/* GLOBAL RESET STYLING */
+/* #region GLOBAL RESET STYLING */
 body,html {
   margin: 0;
   padding: 0;
@@ -8,7 +8,14 @@ body,html {
   font-family: 'Nunito Sans',sans-serif;
   font-size: 16px;
 }
-/* CONTENT WRAPPER AND SECTION GLOBAL STYLING */
+@media (min-width: 992px) {
+  body {
+    font-size: 18px;
+  }
+}
+/* #endregion */
+
+/* #region CONTENT WRAPPER AND SECTION GLOBAL STYLING */
 .container {
   background-color: #08192B;
   display: grid;
@@ -25,13 +32,22 @@ body,html {
   max-width: 1000px;
   margin: 0 auto;
 }
-/* SEARCH SECTION */
+/* #endregion */
+
+/* #region SEARCH BAR */
 .searchWrapper {
   background: url('/images/m-background.png') no-repeat;
   background-size: cover;
   padding-top: 150px;
   padding-bottom: 150px;
   grid-row: 1 / 2;
+}
+@media (min-width: 992px) {
+  .searchWrapper {
+    background: url('/images/background.png');
+    background-position: top center;
+    background-size: cover;
+  }
 }
 #searchBarInput {
   width: 100%;
@@ -56,6 +72,9 @@ body,html {
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: #fff;
 }
+/*#endregion*/
+
+/* #region DROP DOWN */
 .foodOptions {
   position: relative;
   top: -1px;
@@ -145,7 +164,9 @@ li.dropdownOptions {
   content: '\f06a';
   color: #AC7A21;
 }
-/* ACCORDION SECTION */
+/* #endregion */
+
+/* #region ACCORDION */
 .accordionWrapper {
   background-color: #08192B;
   border-top: 6px solid #0E2B47;
@@ -204,7 +225,9 @@ li.dropdownOptions {
 p .infoInside {
   margin: 0;
 }
-/* FOOTER SECTION */
+/* #endregion */
+
+/* #region FOOTER */
 footer {
   background-color: #0E2B47;
   align-self: end;
@@ -223,16 +246,7 @@ footer p {
   padding: 20px 15px;
   padding-top: 0;
 }
-/* DESKTOP MEDIA QUERY */
 @media (min-width: 992px) {
-  body {
-    font-size: 18px;
-  }
-  .searchWrapper {
-    background: url('/images/background.png');
-    background-position: top center;
-    background-size: cover;
-  }
   footer {
     display: flex;
     flex-direction: row;
@@ -249,3 +263,4 @@ footer p {
     margin: 0;
   }
 }
+/* #endregion */
