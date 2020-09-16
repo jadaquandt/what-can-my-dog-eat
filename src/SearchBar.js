@@ -87,7 +87,7 @@ class SearchBar extends Component {
             else {
                 suggestionsListComponent = (
                     <div class="no-suggestions">
-                        <em>No suggestions!</em>
+                        <span>No Suggestions</span>
                     </div>
                 )
             }
