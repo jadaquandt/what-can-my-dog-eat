@@ -3,7 +3,8 @@ const dogFoods = [
         name: "Chocolate",
         answer: "No!",
         status: "harmful",
-        reason: "Chocolate contains toxic substances called methylxanthines, which are stimulants that stop a dog’s metabolic process. Even just a little bit of chocolate, especially dark chocolate, can cause diarrhea and vomiting. A large amount can cause seizures, irregular heart function, and even death. If your dog does ingest chocolate, contact a veterinarian or Pet Poison Helpline as soon as possible."
+        reason: "Chocolate contains toxic substances called methylxanthines, which are stimulants that stop a dog’s metabolic process. Even just a little bit of chocolate, especially dark chocolate, can cause diarrhea and vomiting. A large amount can cause seizures, irregular heart function, and even death. If your dog does ingest chocolate, contact a veterinarian or Pet Poison Helpline as soon as possible.",
+        category: "sweet"
     },
     {
         name: "Almonds",
