@@ -50,12 +50,12 @@ body,html {
   }
 }
 #searchBarInput {
-  width: 100%;
-  margin-top: 60px;
-  height: 10vh;
+  width: 17em;
+  margin-top: 2em;
+  height: 2em;
   border: 0;
   background-color: #0e2b47;
-  color:rgba(255,255,255);
+  color:rgba(255,255,255, 0.3);
   font-family: 'Nunito Sans',sans-serif;
   font-size: 2em;
   padding: 2px 20px;

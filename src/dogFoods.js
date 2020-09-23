@@ -410,6 +410,13 @@ const dogFoods = [
         status: "limited",
         reason: "While not a major danger if ice cream is given in small amounts as a treat, for dogs with obesity, diabetes, allergies or dairy intolerance, ice cream could be a big problem. Although some dog owners do feed their dogs ice cream, we cannot say that it is a good dessert for dogs, especially when there are other options that are not likely to cause digestive problems.",
         preparation: "Rather than feeding your dog ice cream, look up a recipe for dog friendly ice cream or pick up a ready-made one from your local pet store."
+    },
+    {
+        name: "Poop",
+        answer: "No!",
+        status: "harmful",
+        reason: "Come on now! That's just gross. Why would you search that?",
+        preparation: "Just no."
     }
 ]
 
