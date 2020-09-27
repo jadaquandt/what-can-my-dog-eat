@@ -13,6 +13,9 @@ body,html {
     font-size: 18px;
   }
 }
+.d-none {
+  display: none;
+}
 /* #endregion */
 
 /* #region CONTENT WRAPPER AND SECTION GLOBAL STYLING */
@@ -224,15 +227,23 @@ li.dropdownOptions {
   object-fit: contain;
 }
 .infoInside {
+  height: 0px;
   background-color: #1d4061;
   border-radius: 3px;
   font-size: 18px;
   font-weight: 600;
-  padding: 1.5em 3em;
+  padding: 0;
   margin: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
 }
-p .infoInside {
+.infoInside.expanded {
+  height: 300px;
+  transition: all 0.7s ease-out;
+}
+.infoInside p{
   margin: 0;
+  padding: 1.5em 3em;
 }
 /* #endregion */
 
