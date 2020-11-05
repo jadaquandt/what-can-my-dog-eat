@@ -53,7 +53,8 @@ body,html {
   }
 }
 #searchBarInput {
-  width: 28em;
+  width: 100%;
+  max-width: 28em;
   margin-top: 2em;
   height: 2em;
   border: 0;
